@@ -1,5 +1,7 @@
 # vue-palette-generator
 
+![](https://repository-images.githubusercontent.com/198500892/fef71b00-adaf-11e9-8379-e25d7d3e5b8c)
+
 ## Project setup
 ```
 yarn install
