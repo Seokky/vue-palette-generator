@@ -7,7 +7,8 @@
 import MainArea from './components/MainArea.vue';
 
 export default {
-  name: 'app',
+  name: 'App',
+
   components: {
     MainArea,
   },
@@ -16,9 +17,11 @@ export default {
 
 <style lang="scss">
 @import '@/styles/reset.scss';
+
 * {
   box-sizing: border-box;
 }
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

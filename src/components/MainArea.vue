@@ -1,12 +1,8 @@
 <template lang="pug">
   section.mainAreaWrapper
-    settings-panel(
-      @generate="getColorBlocks"
-    )
+    settings-panel(@generate="getColorBlocks")
 
-    palette-blocks(
-      :palette="palette"
-    )
+    palette-blocks(:palette="palette")
 </template>
 
 <script>
@@ -15,15 +11,16 @@ import PaletteBlocks from '@/components/PaletteBlocks.vue';
 
 export default {
   name: 'MainArea',
+
   components: {
     SettingsPanel,
     PaletteBlocks,
   },
-  data() {
-    return {
-      palette: [],
-    };
-  },
+
+  data: () => ({
+    palette: [],
+  }),
+
   methods: {
     getColorBlocks(payload) {
       this.palette = payload.palette;

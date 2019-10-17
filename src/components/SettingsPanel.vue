@@ -3,29 +3,41 @@
 
     .settingsPanelInputs
       .inputGroup
-        span.label Number of colors
+        span.label(v-text="'Number of colors'")
         select.input(v-model="settings.numOfColors")
-          option(value="2") 2
-          option(value="3") 3
-          option(value="4") 4
-          option(value="5") 5
+          option(
+            value="2"
+            v-text="'2'"
+          )
+          option(
+            value="3"
+            v-text="'3'"
+          )
+          option(
+            value="4"
+            v-text="'4'"
+          )
+          option(
+            value="5"
+            v-text="'5'"
+          )
 
     .settingsPanelFooter
       button.generateBtn(
+        v-text="'Generate!'"
         @click="emitPalette"
-      ) Generate!
+      )
 
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      settings: {
-        numOfColors: 3,
-      },
-    };
-  },
+  data: () => ({
+    settings: {
+      numOfColors: 3,
+    },
+  }),
+
   methods: {
     emitPalette() {
       this.$emit('generate', {
@@ -56,22 +68,27 @@ export default {
 .settingsPanel {
   display: flex;
   flex-direction: column;
-  background: rgba(coral,.1);
+  background: rgb(44, 31, 52);
   height: 40vh;
   padding: 40px 20px;
-  box-shadow: 0px 2px 6px rgba(0,0,0,.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
   .settingsPanelInputs {
     flex-grow: 1;
     display: flex;
     justify-content: center;
+
     .inputGroup {
       flex-basis: 200px;
       display: flex;
       flex-direction: column;
+
       .label {
         font-size: 1rem;
         text-align: left;
+        color: white;
       }
+
       .input {
         font-size: 1.1rem;
         padding: 5px 10px;
@@ -79,19 +96,25 @@ export default {
       }
     }
   }
+
   .settingsPanelFooter {
     .generateBtn {
       cursor: pointer;
       border: none;
+      border-radius: 4px;
       padding: 10px 20px;
       font-size: 1.5rem;
-      color: white;
-      background: turquoise;
-      transition: all .15s ease-in;
-      &:active, &:focus, &:hover {
+      color: black;
+      background: white;
+      transition: all 0.15s ease-in;
+
+      &:active,
+      &:focus,
+      &:hover {
         outline: none;
-        box-shadow: 0px -2px 4px rgba(0,0,0,.2);
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
       }
+
       &:active {
         transform: scale(0.95);
       }
